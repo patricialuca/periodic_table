@@ -15,7 +15,7 @@ else
     if [[ $LENGTH -gt 2 ]]
     then
       # get data by full name
-      #DATA=$($PSQL "SELECT * FROM elements INNER JOIN properties USING(atomic_number) INNER JOIN types USING (type_id) WHERE name='$SYMBOL'")
+      DATA=$($PSQL "SELECT * FROM elements INNER JOIN properties USING(atomic_number) INNER JOIN types USING (type_id) WHERE name='$SYMBOL'")
       if [[ -z $DATA ]]
       then
         echo "I could not find that element in the database."
