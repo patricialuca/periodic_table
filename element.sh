@@ -14,7 +14,7 @@ else
     LENGTH=$(echo -n "$SYMBOL" | wc -m)
     if [[ $LENGTH -gt 2 ]]
     then
-      # get data by full name
+      #get data by full name
       DATA=$($PSQL "SELECT * FROM elements INNER JOIN properties USING(atomic_number) INNER JOIN types USING (type_id) WHERE name='$SYMBOL'")
       if [[ -z $DATA ]]
       then
