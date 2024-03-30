@@ -27,7 +27,7 @@ else
       fi
     else
       # get data by atomic symbol
-      #DATA=$($PSQL "SELECT * FROM elements INNER JOIN properties USING(atomic_number) INNER JOIN types USING (type_id) WHERE symbol='$SYMBOL'")
+      DATA=$($PSQL "SELECT * FROM elements INNER JOIN properties USING(atomic_number) INNER JOIN types USING (type_id) WHERE symbol='$SYMBOL'")
       if [[ -z $DATA ]]
       then
         echo "I could not find that element in the database."
